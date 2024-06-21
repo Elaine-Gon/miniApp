@@ -25,6 +25,9 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "mfe",
+      remotes: {
+        host: "host@http://localhost:3000/remoteEntry.js"
+      },
       filename: "remoteEntry.js",
       exposes: {
         // expose each component
