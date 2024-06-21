@@ -32,6 +32,7 @@ module.exports = {
       exposes: {
         // expose each component
         "./HomeMfe": "./src/App",
+        "./DetailsMfe": "./src/screens/Details/Details"
       },
       shared: {
         ...deps,

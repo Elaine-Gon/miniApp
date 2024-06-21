@@ -1,5 +1,8 @@
 import React, { Suspense, startTransition } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import { FiChevronLeft } from "react-icons/fi";
+import Details from './screens/Details/Details';
+import { GlobalStyle } from './styles/global';
 
 const host = React.lazy(() => import("host/HomeHost"));
 const Button = React.lazy(() => import("host/Button"));
@@ -12,16 +15,16 @@ function Home() {
       navigate("/")
     })
   }
+
   return (
     <div>
-      <h1>
-        Hello World
-      </h1>
       <Suspense fallback={<div>Loading...</div>}>
+      <GlobalStyle/>
+      <Details/>
         <Button
           onClick={handler}
         >
-          EITA
+          <FiChevronLeft  size={50}/>
         </Button>
       </Suspense>
     </div>
